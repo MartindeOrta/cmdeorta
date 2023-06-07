@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button>Display video</button>
+    <div class="hidden">
+        <video>
+            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm"
+            type="video/webm"/>
+            <p>
+                Your browser doesn't support HTML video. here is a 
+                <a href="rabbit320.mp4">link to the video</a> instead.
+            </p>
+        </video>
+    </div>
+    <script>
+        const btn = document.querySelector('button');
+        const box = document.querySelector('div');
+        const video = document.querySelector('video');
+
+        btn.addEventListener('click', () =>box.classList.remove('hidden'));
+
+
+        //estamos evitando que el click se propage a los demas elementos 
+        video.addEventListener('click', (event)=>{
+            event.stopPropagation();
+            video.play()
+
+        });
+        box.addEventListener('click', () =>box.classList.add('hidden'));
+    </script>
+</body>
+</html>

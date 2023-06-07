@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* input {
+  appearance: none;
+} */
+input[type="checkbox"] {
+  appearance: none;
+}
+span {
+
+
+}
+
+input[type="checkbox"] {
+  width: 100px;
+  height: 100px;
+}
+input[type="checkbox"] {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  border: 1px solid rgb(255, 0, 0);
+  /* Adjusts the position of the checkboxes on the text baseline */
+  vertical-align: -2px;
+  /* Set here so that Windows' High-Contrast Mode can override */
+  color: rgb(0, 255, 106);
+}
+
+input[type="checkbox"]::before {
+  content: "x";
+  position: absolute;
+  background: red;
+  font-size: 1.2em;
+  right: -1px;
+  top: -0.3em;
+  visibility: hidden;
+}
+span,
+input[type="checkbox"]:checked::before {
+  /* Use `visibility` instead of `display` to avoid recalculating layout */
+  visibility: visible;
+  
+  background: green;
+}
+
+input[type="checkbox"]:disabled {
+  border-color: rgb(255, 0, 0);
+  background: #ff0000;
+  color: rgb(255, 0, 0);
+}
+    </style>
+</head>
+<body>
+
+
+    <form >
+        <p>
+            <label for="search">search: </label>
+            <input id="search" name="search" type="search"/>
+        </p>
+        <p>
+            <label for="text">text: </label>
+            <input id="text" name="text" type="text" />
+        </p>
+        <p>
+            <label for="date">date: </label>
+            <input id="date" name="date" type="datetime-local" />
+        </p>
+        <p>
+            <label for="radio">radio: </label>
+            <input id="radio" name="radio" type="radio" />
+        </p>
+        <p>
+            <label for="checkbox">checbox: </label>
+            <input id="checkbox" name="checkbox" type="checkbox" />
+        </p>
+        <p><input type="submit" value="submit" /></p>
+        <p><input type="button" value="button"></p>
+        <label
+  ><span><input type="checkbox" name="q5" value="true" /></span> True</label
+>
+<label
+  ><span><input type="checkbox" name="q5" value="false" /></span> False</label
+>
+    </form>
+
+</body>
+</html>

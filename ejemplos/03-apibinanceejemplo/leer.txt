@@ -1,0 +1,2 @@
+lo que voy a intentar hacer es probar un javascript que espere
+ atro con el atributo defer, 

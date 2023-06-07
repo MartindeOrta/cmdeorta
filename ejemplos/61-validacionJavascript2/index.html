@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validacion javascript 2</title>
+<style>
+    body{
+        font: 1em sans-serif;
+        width: 200px;
+        padding: 0;
+        margin: 0 auto;
+    }
+    p * {
+        display: block;
+    }
+    input[type="email"] {
+        appearance: none;
+
+        width: 100%;
+        border: 1px solid #333;
+        margin: 0;
+
+        font-family: inherit;
+        font-size: 90%;
+        box-sizing: border-box;
+    }
+    input:invalid {
+        border-color: #900;
+        background-color: #fdd;
+    }
+    input:focus:invalid {
+        outline: none;
+    }
+
+    .error {
+        width: 100%;
+        padding: 0;
+
+        font-size: 80%;
+        color: white;
+        background-color: #900;
+        border-radius: 0 0 5px 5px;
+
+        box-sizing: border-box;
+    }
+
+    .error.active {
+        padding: 0.3em;
+    }
+
+</style>
+</head>
+<body>
+    <form novalidate>
+        <fieldset>
+            <legend>Validacion Javascript 2</legend>
+            <p>
+            <label for="mail">
+                <span>Por favor ingrese una dirección de correo electronico: </span>
+                <input type="email" id="mail" name="mail" required minlength="8" />
+                <span class="error" aria-live="polite"></span>
+            </label>
+            </p>
+            <button>Submit</button>
+        </fieldset>
+    </form>
+    <script>
+        const form = document.querySelector("form");
+        const email = document.getElementById("mail");
+        const emailError = document.querySelector('#mail + span.error');
+
+        email.addEventListener('input',(event) => {
+            if(email.validity.valid){
+                emailError.textContent = '';
+                emailError.className = '';
+            }else{
+                showError();
+            }
+        });
+        form.addEventListener('submit', (event) =>{
+            if(!email.validity.valid){
+                showError();
+                event.preventDefault();
+            }else{
+                emailError.ClassName = '';
+            }
+        })
+
+        function showError(){
+            if(email.validity.valueMissing){
+                emailError.textContent = "tu necesitas ingregar una dirección de mail.";
+            }else if(email.validity.typeMismatch){
+                emailError.textContent = ' el valor de entrada necesita ser una dirección de mail.';
+
+            }else if(email.validity.tooShort) {
+                emailError.textContent = `La direccion debe ser de por lo menos ${email.minLength} caracteres; tu ingresaste ${email.value.length}.`;
+            }
+
+            emailError.className = `error active`;
+        }
+    </script>
+</body>
+</html>

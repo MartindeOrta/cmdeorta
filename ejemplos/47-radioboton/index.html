@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>cual es tu comida favorita??</legend>
+
+ <section>
+        <ul>
+            <li>
+                <label for="sopa">sopa</label>
+                <input type="text" id="sopa" name="comida" value="sopa"
+                checked />
+            </li>
+            <li>
+                <label for="guiso">guiso</label>
+                <input type="radio" id="guiso" name="comida" value="guiso" />
+            </li>
+            <li>
+                <label for="pizza">Pizza</label>
+                <input type="radio" id="pizza" name="comida" value="pizza" />
+            </li>
+        </ul>
+        <label for="price">Choose a maximum house price: </label>
+<input
+  type="range"
+  name="price"
+  id="price"
+  min="50000"
+  max="500000"
+  step="100"
+  value="250000" />
+<output class="price-output" for="price"></output>
+
+<label for="color">Pick a color: </label>
+<input type="color" id="color" name="color">
+    </section>
+    <section>
+        <!-- <input type="submit" value="Submit this form"  name="comida"> -->
+        <input type="reset" value="Reset this form"  name="comida">
+        <input type="button" value="Do Nothing without JavaScript"  name="comida">
+      
+        <button type="submit"  name="comida">Submit this form</button>
+        <!-- <button type="reset"  name="comida">Reset this form</button> -->
+        <button type="button"  name="comida">Do Nothing without JavaScript</button>
+    </section>
+    </fieldset>
+    <script>
+        const price = document.querySelector("#price");
+const output = document.querySelector(".price-output");
+
+output.textContent = price.value;
+
+price.addEventListener("input", () => {
+  output.textContent = price.value;
+});
+    </script>
+</body>
+</html>

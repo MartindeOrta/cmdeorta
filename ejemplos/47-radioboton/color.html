@@ -1,0 +1,15 @@
+<html><input type="color" id="color" name="color" >
+<p></p>
+<script>
+    color= document.querySelector("#color")
+    para=document.querySelector("p")
+    html=document.querySelector("html")
+    para.textContent=color.value
+    para.setAttribute("style",`background-color: white;`)
+    document.addEventListener("click", function(){
+        para.textContent=color.value
+        html.setAttribute("style",`background-color: ${color.value};`)
+    })
+</script>
+
+</html>

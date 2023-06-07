@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <canvas  width="450" height="300"></canvas>
+<script>
+
+    
+const canvas = document.querySelector('canvas');
+const ctx = canvas.getContext('2d');
+
+function drawCircle(x, y, size) {
+  ctx.fillStyle = 'white';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.beginPath();
+  ctx.fillStyle = 'black';
+  ctx.arc(x, y, size, 0, 2 * Math.PI);
+  ctx.fill();
+}
+
+let x = 30;
+let y = 50;
+const size = 30;
+
+drawCircle(x, y, size);
+
+// Add your code here
+
+document.addEventListener('keydown', e=> {
+if(e.key==="d"&& x<450){
+
+   x+=10; 
+drawCircle(x, y,  size)
+
+}else if (e.key==="d"){
+drawCircle(x, y,  size)
+
+}
+if(e.key==="a"&& x>30){
+
+   x-=10; 
+drawCircle(x, y,  size)
+
+}else if (e.key==="a"){
+drawCircle(x, y,  size)
+
+}
+if(e.key==="w"&& y>30){
+
+   y-=10; 
+drawCircle(x, y,  size)
+
+}else if (e.key==="w"){
+drawCircle(x, y,  size)
+
+}
+if(e.key==="s"&& y<290){
+
+   y+=10; 
+drawCircle(x, y,  size)
+
+}else if (e.key==="s"){
+drawCircle(x, y,  size)
+
+}
+
+
+})
+
+
+</script>
+</body>
+</html>

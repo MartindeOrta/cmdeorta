@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validacion sin API</title>
+    <style>
+        body {
+            font: 1em sans-serif;
+            width: 200px;
+            padding: 0;
+            margin: 0 auto;
+        }
+        form {
+            max-width: 200px; 
+        }
+        p * {
+            display: block;
+        }
+
+        input.mail {
+            appearance: none;
+            width: 100%;
+            border: 1px solid #333;
+            margin: 0;
+
+            font-family: inherit;
+            font-size: 90%;
+
+            box-sizing: border-box;
+        }
+
+        input.invalid{
+            border-color: #900;
+            background-color: #fdd;
+        }
+
+        input:focus.invalid {
+            outline:none;
+        }
+
+        .error {
+            width: 100%;
+            padding: 0; 
+            font-size: 80%;
+            color: white;
+            background-color: #900;
+            border-radius: 0 0 5px 5px;
+            box-sizing: border-box;
+        }
+
+        .error.active {
+            padding: 0.3em;
+        }
+    </style>
+    
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Validación sin API</legend>
+            
+            <p>
+                <label for="mail">
+                    <span>por favor ingrese una direccion de mail: </span>
+                    <input type="text" id="mail" name="mail" />
+                    <span class="error" aria-live="polite"></span>
+                </label>
+            </p>
+            <button>Submit</button>
+        </fieldset>
+    </form>
+    <script>
+        const form = document.querySelector("form");
+        const email = document.getElementById("mail");
+        const error = email.nextElementSibling;
+        
+        const emailRegExp = 
+        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+
+
+        window.addEventListener("load", () => {
+            const isValid = email.value.length === 0 || emailRegExp.test(email.value);
+            email.className = isValid ? "valid" : "invalid";
+        });
+
+
+        email.addEventListener("input", () => {
+            const isValid = email.value.length === 0 || emailRegExp.test(email.value);
+            if (isValid){
+                email.className = "valid";
+                error.textContent = "";
+                error.className = "error";
+
+
+            }else{
+                email.className = "invalid";
+            }
+        })
+         form.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const isValid = email.value.length === 0 || emailRegExp.test(email.value);
+            if (!isValid){
+                email.className = "invalid" ;
+                error.textContent = "Espero un mail, mi amigo!";
+                error.className = "error active";
+            }else {
+                email.className = "valid";
+                error.textContent = "";
+                error.className = "error";
+            }
+         });
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .movimiento{
+  background-color: white;
+}
+.tile {
+  height: 100px;
+  width: 25%;
+  float: left;
+}
+    </style>
+</head>
+<body>
+    <button>click me for change color</button>
+    <button>click me for change color</button>
+    <button>click me for change color</button>
+    <button>click me for change color</button><br>
+    <button>click me for change color</button>
+    <button>click me for change color</button>
+    <button>click me for change color</button>
+    <button>click me for change color</button>
+    <button>click me for change color</button>
+    <button>no hace nada porque se le elimino la escucha</button>
+
+    <div id="container">
+        <div class="tile">a</div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+      </div>
+
+
+
+
+
+
+
+    <script>
+        const btn = document.querySelectorAll('button')
+        function random(number){
+            return Math.floor(Math.random() * (number+1));
+        }
+
+
+        function changeBackground(e) {
+  const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+  document.body.style.backgroundColor = rndCol;
+  console.log(e)
+}
+function bgChange() {
+  const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+  return rndCol;
+}
+for (let index = 0; index < btn.length; index++) {
+ // btn[index].addEventListener('mouseout', changeBackground)
+ // btn[index].addEventListener('mouseover', changeBackground)
+ btn[index].addEventListener('click', ()=>{
+  if(btn[btn.length-1].textContent==="chau"){
+    btn[btn.length-1].textContent="hola"}else
+    {
+        btn[btn.length-1].textContent="chau"
+    }
+
+
+ })
+
+
+}
+
+
+const container = document.querySelector('#container');
+
+container.addEventListener('click', (e)=>{
+    console.log(e)
+e.target.style.backgroundColor = bgChange()});
+btn[btn.length-1].textContent="hola"
+//   btn[btn.length-1].removeEventListener('mouseover', changeBackground)
+        // btn.addEventListener('mouseout', changeBackground)
+        // btn.addEventListener('mouseover', changeBackground)
+
+
+
+//         var timeout;
+// document.onmousemove = function(){
+//   clearTimeout(timeout);
+//   document.body.classList.remove("movimiento");
+//   changeBackground();
+//   timeout = setTimeout(function(){
+//     document.body.classList.add("movimiento");
+//   }, 300);
+// }
+
+
+    </script>
+</body>
+</html>

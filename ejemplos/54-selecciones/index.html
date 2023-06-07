@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+#select2 {
+  appearance: none;}
+  .select-wrapper1 {
+  position: relative;
+}
+.select-wrapper1::after {
+  content: "▼";
+  font-size: 1rem;
+  top: 6px;
+  right: 10px;
+  position: absolute;
+}
+
+    </style>
+</head>
+<body>
+    <label for="select">Select a fruit</label>
+<div class="select-wrapper1">
+  <select id="select2" name="select">
+    <option>Bananaaaaaaaaaaaaaaaaaaaaaaaa</option>
+    <option>Cherry</option>
+    <option>Lemon</option>
+  </select>
+</div>
+    <label for="select">Select a fruit</label>
+<div class="select-wrapper2">
+  <select id="select1" name="select">
+    <option>Banana</option>
+    <option>Cherry</option>
+    <option>Lemon</option>
+  </select>
+</div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>mi prueba de pago</title>
+    <link href="payment-form.css" rel="stylesheet" />
+  </head>
+  <body>
+    <p>Esta es mi pagina</p>
+    <form>
+        <h1>Formulario de pago</h1>
+        <p>
+            los campos requeridos estan seguidos por un 
+            <strong><span aria-label="required">*</span></strong>.
+        </p>
+
+        <section>
+            <h2>Información de Contacto</h2>
+            <fieldset>
+                <legend>Titulo</legend>
+                <ul>
+                    <li>
+                        <label for="title_1">
+                            <input type="radio" id="title_1" name="titulo"
+                            value="R"/>
+                            Rey
+                        </label>
+                    </li>
+                    <li>
+                        <label for="title_2">
+                            <input type="radio" id="title_2" name="titulo"
+                            value="Q"/>
+                            Reina
+                        </label>
+                    </li>
+                    <li>
+                        <label for="title_3">
+                            <input type="radio" id="title_3" name="titulo"
+                            value="B">
+                            Bufon
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+            <p>
+                <label for="name">
+                    <span>Nombre: </span>
+                    <strong><span aria-label="required">*</span></strong>
+                </label>
+                <input type="text" id="name" name="username" />
+            </p>
+            <p>
+                <label for="mail">
+                    <span>Email: </span>
+                    <strong><span aria-label="required">*</span></strong>
+                </label>
+                <input type="email" id="mail" name="usermail" />
+            </p>
+            <p>
+                <label for="pwd">
+                    <span>Contraseña: </span>
+                    <strong><span aria-label="required">*</span></strong>
+                </label>
+                <input type="password" id="pwd" name="password" />
+            </p>
+        </section>
+        <section>
+            <h2>Información de pago</h2>
+            <p>
+                <label for="tarjeta">
+                    <span>Tipo de carjeta: </span>
+                </label>
+                <select id="tarjeta" name="usercard">
+                    <option value="visa">Visa</option>
+                    <option value="mc">MasterCard</option>
+                    <option vaule="amex">American Express</option>
+                </select>
+             
+            </p>
+            <p>
+                <label for="number">
+                    <sapn>Card number: </sapn>
+                    <strong><span aria-label="required">
+                        *
+                    </span></strong>
+                </label>
+                <input 
+                    type="text"
+                    id="expiration"
+                    required="true"
+                    placeholder="MM/YY"
+                    pattern="^(0[1-9]|1[0-2])\/([0-9]{2})$"/>
+            </p>
+        </section>
+        <section>
+            <p>
+                <button type="submit">Validar el pago</button>
+            </p>
+        </section>
+    </form>
+
+  </body>
+</html>

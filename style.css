@@ -1,0 +1,98 @@
+.special{
+color:red;
+
+}
+
+body{
+  display: flex;
+  background-color:#000022;
+  /* background-color:#ffffff; */
+  place-items: center;
+  justify-content: center;
+  height: 100%;
+    margin: 0;
+    padding: 0;
+  height:100vh;
+}
+
+
+  .boxDvi{
+   
+    font-style: white ;
+    font-size: 100px;
+    display: grid;
+    place-content: center;
+    display: grid;
+    place-content: center;
+    
+    
+  }
+  .box2{
+    object-fit: cover;
+    width: auto;
+    height: 250%;
+    background-color: rebeccapurple;
+    transform: rotate(0.8turn);
+    display: grid;
+    place-content: center;
+   /* position:absolute;  */
+     z-index:0; 
+  }
+  .box1{
+    
+    width: auto;
+    height: 130%;
+    
+    display: grid;
+    place-content: center;
+    top:50%;
+    left:45%;
+    width:10%;
+    height:12px;
+    position:absolute;
+     z-index:1; 
+  }
+  .box3{
+    
+    width: auto;
+    height: 130%;
+    
+    display: grid;
+    place-content: center;
+    top:80%;
+    left:45%;
+    width:10%;
+    height:12px;
+    position:absolute;
+     z-index:1; 
+  }
+  #principal{
+    background-image: linear-gradient(to top, #000000, #616161);
+    width: 500px;
+   
+    /* background-color: #add8e6; */
+    text-align: center;
+  
+ 
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 15px 15px 15px 15px;
+    /* box-shadow: gray 15px 15px 10px; */
+
+}
+@font-face {
+font-family: 'fuego';
+src: url("fuentes/Hellbone-Demo.otf");
+}
+@font-face {
+font-family: 'Champion';
+src: url("fuentes/Championship.ttf");
+}
+#titulo{
+
+  color: white;
+  font-style: white;
+font: 80px fuego, Geneva, sans-serif ;
+/* text-shadow: #84a4af 2.5px 2.5px 1px; */
+}
+ 
+

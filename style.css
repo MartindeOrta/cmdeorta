@@ -81,11 +81,11 @@ body{
 }
 @font-face {
 font-family: 'fuego';
-src: url("fuentes/Hellbone-Demo.otf");
+src: url("Hellbone-Demo.otf");
 }
 @font-face {
 font-family: 'Champion';
-src: url("fuentes/Championship.ttf");
+src: url("Championship.ttf");
 }
 #titulo{
 

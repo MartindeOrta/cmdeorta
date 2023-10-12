@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=}, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-light bg-primary ustify-content-between">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <div id="areaRegistroIngreso" class="form-inline my-2 my-lg-0">
+                <div class="custom-control custom-checkbox my-1 mr-sm-2">
+                    <input type="checkbox" data-toggle="toggle" data-on="registrar" data-off="ingresar" id="cbRegistroIngreso">
+                </div>
+                <div id="areaRegistrar" style="display: none;">
+                    <input class="form-control mr-sm-2" type="email" id="email" placeholder="coloca aqui tu emal" />
+                    <input class="form-control mr-sm-2" type="password" id="pass"
+                        placeholder="coloca aqui tu contraseña" />
+                    <button class="btn btn-outline-dark my-2 my-sm-0" id="btnregistrar" type="submit">registrar</button>
+
+                </div>
+                <div id="areaLogin">
+                    <input class="form-control mr-sm-2" type="email" id="emaila" placeholder="coloca aqui tu emal" />
+                    <input class="form-control mr-sm-2" type="password" id="passa" placeholder="coloca aqui tu contraseña" />
+                    <button class="btn btn-outline-dark my-2 my-sm-0" id="btningresar">ingresar</button>
+                </div>
+            </div>
+            <span id="login" class="badge badge-primary">Primary</span>
+            <button style="display: none;" id="btnverificarLogin" class="btn btn-warning my-2 my-sm-0">enviar mail de verificación</button>
+            <button style="display: none;" class="btn btn-danger my-2 my-sm-0" id="btncerrar">Cerrar sesion</button>
+        </nav>
+    </div>
+    <script src="usuario.js" type="module"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/js/bootstrap4-toggle.min.js"></script>
+
+    <script async src="https://telegram.org/js/telegram-widget.js?21" data-telegram-login="pruevacesardeortabot" data-size="large" data-auth-url="http://tradingver.com/default.aspx"></script>
+    
+    </body>
+</html>

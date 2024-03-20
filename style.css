@@ -30,7 +30,7 @@ body{
   .box2{
     object-fit: cover;
     width: auto;
-    height: 250%;
+    height: 300%;
     background-color: rebeccapurple;
     transform: rotate(0.8turn);
     display: grid;

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>const myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+myHeaders.append("Cookie", "PHPSESSID=mokb3irjrn0h8g8pnt179r28bq");
+
+const raw = JSON.stringify({
+  "ChatId": "402",
+  "Apellido": "de Orta",
+  "Nombre": "Cesar Martin",
+  "Cuil": "21-33333333-0",
+  "Documento": "33333333",
+  "TipoDocumento": "DNI",
+  "FechaNacimiento": "03/07/2006",
+  "EstadoCivil": "CASADO",
+  "DireccionCalle": "Inglaterra",
+  "DireccionAltura": "92",
+  "DireccionPiso": null,
+  "DireccionDep": null,
+  "Mail": null,
+  "Localidad": "9 DE JULIO",
+  "LocalidadId": "528",
+  "CodigoPostal": "6500",
+  "Provincia": "BUENOS AIRES",
+  "CodAreaCelular": "291",
+  "NroCelular": "4681055",
+  "CodAreaLaboral": null,
+  "NroLaboral": null,
+  "TipoLaboralId": "2",
+  "TipoLaboral": "AUTONOMO",
+  "Ingresos": "200000",
+  "PersonaPolitica": false,
+  "PersonaObligado": false,
+  "RetiraTarjeta": "Recibe la tarjeta en su Domicilio",
+  "Producto": "1",
+  "EstadoCoop": null,
+  "EstadoBBPS": "1"
+});
+
+const requestOptions = {
+  method: "POST",
+  headers: myHeaders,
+  body: raw,
+  redirect: "follow"
+};
+
+fetch("https://whatsappproduccion.nuevacardsa.com.ar/public_/alta", requestOptions)
+  .then((response) => response.text())
+  .then((result) => console.log(result))
+  .catch((error) => console.error(error));</script>
+</body>
+</html>
